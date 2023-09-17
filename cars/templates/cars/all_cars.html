@@ -1,0 +1,42 @@
+{% extends 'cars/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- ======= Pricing Section ======= -->
+<section id="" class="pricing">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title mt-5">
+        <h2>Our Cars</h2>
+        <h3>Get Your Dream Car at an Affordable Price </h3>
+      </div>
+
+      <form action="{% url 'cars:search' %}" method="POST" class="flex d-flex gap-1 boxx col-lg-4 container">
+        {% csrf_token %}
+        <input type="text" name="searched" class="form-control" placeholder="Search car">
+        <button type="submit" class="btn btn-secondary"><i class="bi bi-search"></i></button>
+      </form>
+        
+
+
+      <div class="row">
+
+        {% for car in car %}
+
+        <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
+          <div class="box">
+            <h3>{{car.carName}}</h3>
+            <p class="fs-5">{{car.carPrice}}<sup>Tzs</sup></p>
+            <img class="w-75" src="{{car.carImg.url}}" alt="">
+            <a href="{% url 'cars:car_detail' car.id %}" class="float-end pb-2">Details <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+  </section><!-- End Pricing Section -->
+
+
+{% endblock content %}

@@ -1,0 +1,51 @@
+{% extends 'cars/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row car mb-3 mx-auto">
+            <div class="col-md align-items-center car">
+                <h3>{{singleCar.carName}}</h3>
+                <p class="fs-5">{{singleCar.carPrice}}<sup>Tzs</sup></p>
+                    <img class="w-75" src="{{singleCar.carImg.url}}" alt="">
+            </div>
+
+            <div class="col-md border rounded">
+                <h2>Car Information</h2>
+                <li class="flex d-flex justify-content-between border-bottom">
+                    <p>Price</p>
+                    <p>{{singleCar.carPrice}}</p>
+                </li>
+                <li class="flex d-flex justify-content-between border-bottom">
+                    <p>Color</p>
+                    <p>{{singleCar.color}}</p>
+                </li>
+                <li class="flex d-flex justify-content-between border-bottom">
+                    <p>Price</p>
+                    <p>{{singleCar.carPrice}}</p>
+                </li>
+                <li class="flex d-flex justify-content-between border-bottom">
+                    <p>Price</p>
+                    <p>{{singleCar.carPrice}}</p>
+                </li>
+                <li class="flex d-flex justify-content-between border-bottom">
+                    <p>Engine(cc)</p>
+                    <p>{{singleCar.carEngine}}</p>
+                </li>
+                <li class="flex d-flex justify-content-between border-bottom">
+                    <p>Transmission</p>
+                    <p>{{singleCar.transmission}}</p>
+                </li>
+                <li class="flex d-flex justify-content-between border-bottom">
+                    <p>Fuel type</p>
+                    <p>{{singleCar.fuel}}</p>
+                </li>
+                <li class="flex d-flex justify-content-between">
+                    <p>Doors</p>
+                    <p>{{singleCar.doors}}</p>
+                </li>
+            </div>
+    </div>
+</div>
+{% endblock content %}

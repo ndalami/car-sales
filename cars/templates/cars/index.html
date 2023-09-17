@@ -1,0 +1,63 @@
+{% extends 'cars/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <h2 class="text-white">Get Your Dream Car from Us</h2>
+          <p class="text-white">We are company specialized in selling various car brands
+             both new and used from abroad at an affordable price</p>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            <a href="#pricing" class="btn-get-started scrollto">Get Started</a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+          <img src="{% static 'cars/assets/img/hero-img.png' %}" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <!-- ======= Pricing Section ======= -->
+  <section id="pricing" class="pricing">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Our Cars</h2>
+        <h3>Get Your Dream Car at an Affordable Price </h3>
+      </div>
+
+      <div class="row">
+
+        {% for car in car %}
+
+        <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
+          <div class="box">
+            <h3>{{car.carName}}</h3>
+            <p class="fs-5">{{car.carPrice}}<sup>Tzs</sup></p>
+            <div class="flex d-block">
+              <img class="w-75" src="{{car.carImg.url}}" alt="">
+              <a href="{% url 'cars:car_detail' car.id %}" class="float-end pb-2">Details <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+
+
+      </div>
+
+      <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+        <a href="{% url 'cars:cars' %}"><div class="btn btn-outline-secondary float-center w-25">All Cars</div></a>
+      </div>
+
+    </div>
+  </section><!-- End Pricing Section -->
+{% endblock content %}

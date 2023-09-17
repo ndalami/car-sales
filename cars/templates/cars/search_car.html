@@ -1,0 +1,33 @@
+{% extends 'cars/base.html' %}
+{% load static %}
+
+{% block content %}
+
+        <section id="" class="pricing">
+            <div class="container" data-aos="fade-up">
+            {% if searched %}
+                <div class="d-flex mar car justify-content-center ms-1 me-1 mt-4 alert alert-warning alert-dismissible fade show" role="alert">
+                    You searched for <span class="text-info ms-2">{{searched}}.</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endif %}
+        
+              <div class="row">
+        
+                {% for cars in cars %}
+        
+                <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
+                    <div class="box">
+                      <h3>{{cars.carName}}</h3>
+                      <p class="fs-5">{{cars.carPrice}}<sup>Tzs</sup></p>
+                      <img src="{{cars.carImg.url}}" alt="">
+                      <a href="{% url 'cars:car_detail' cars.id %}" class="float-end pb-2">Details <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+        
+                {% endfor %}
+              </div>
+            </div>
+          </section><!-- End Pricing Section -->
+
+{% endblock content %}
