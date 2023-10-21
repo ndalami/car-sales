@@ -2108,3 +2108,13 @@ mar{
 .pan{
   margin-left: 70%;
 }
+
+#navbarSupportedContent {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100; /* Adjust the z-index as needed */
+  padding: 20px;
+  background-color: #f8f9fa; /* Adjust the background color */
+}
