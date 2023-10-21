@@ -1,0 +1,79 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>MAGARI</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'cars/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'cars/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'cars/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'cars/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'cars/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'cars/assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'cars/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'cars/assets/vendor/swiper/bootstrap.bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'cars/assets/css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    
+<!-- Modal -->
+<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <form action="{% url 'accounts:valid_member' %}" method="post">
+      {% csrf_token %}
+    <div class="modal-header text-center">
+      <h4 class="modal-title w-100 font-weight-bold">MAGARI</h4>
+      <button type="button" class="btn close" data-bs-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body mx-3">
+      <div class="md-form mb-5">
+        <input type="text" name="username" class="form-control validate">
+        <label data-error="wrong" data-success="right">Your username</label>
+      </div>
+
+      <div class="md-form mb-4">
+        <input type="password" name="password" class="form-control validate">
+        <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+      </div>
+
+    </div>
+    <div class="modal-footer d-flex justify-content-center">
+      <button type="submit" class="btn btn-outline-info rounded-5 px-5">Login</button>
+    </div>
+  </form>
+  </div>
+</div>
+</div>
+      <!-- Vendor JS Files -->
+      <script src="{% static 'cars/assets/vendor/aos/aos.js' %}"></script>
+      <script src="{% static 'cars/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'cars/assets//vendor/glightbox/js/glightbox.min.js' %}"></script>
+      <script src="{% static 'cars/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+      <script src="{% static 'cars/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+      <script src="{% static 'cars/assets//vendor/waypoints/noframework.waypoints.js' %}"></script>>
+    
+      <!-- Template Main JS File -->
+      <script src="{% static 'cars/assets/js/main.js' %}"></script>
+    
+    </body>
+    
+    </html>

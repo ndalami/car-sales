@@ -1,0 +1,51 @@
+{% extends 'staffpages/dashboard.html' %}
+{% load static %}
+
+{% block content %}
+
+      <form action="" class="disabled">
+        {% csrf_token %}
+        <div class="col-md flex d-flex">
+            <div class="col-3 disabled">
+                <p>First Name:</p>
+            </div>
+           <div class="col-9">
+            {{form.fname}}
+           </div>
+      </div>
+      <div class="col-md flex d-flex  mt-3">
+           <div class="col-3">
+                <p>Second Name:</p>
+           </div>
+           <div class="col-9">
+                {{form.sname}}
+           </div>
+      </div>
+
+      <div class="col-md flex d-flex mt-3">
+        <div class="col-3">
+             <p>Phone:</p>
+        </div>
+        <div class="col-9">
+             {{form.phone}}
+        </div>
+      </div>
+
+    <div class="col-md flex d-flex mt-3 mb-1">
+        <div class="col-3">
+             <p>Message:</p>
+        </div>
+        <div class="col-9 mb-2">
+             {{form.message}}
+        </div>
+    </div>
+      </form>
+
+    <div class="float-lg-end">
+        <a href="{% url 'staffpages:messages' %}" class="">
+          <button class="btn btn-secondary" type="button">Messages</button>
+        </a>
+    </div>
+
+      
+{% endblock content %}

@@ -35,7 +35,7 @@
   <header id="header" class="fixed-top mycolor mb-3">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto text-danger"><a href="index.html">MAGARI</a>
+      <h1 class="logo me-auto"><a href="{% url 'cars:index' %}">MAGARI</a>
       </h1>
 
       <nav id="navbar" class="navbar">
@@ -44,6 +44,7 @@
           <li><a class="nav-link scrollto" href="{% url 'cars:cars' %}">Cars</a></li>
           <li><a class="nav-link scrollto" href="#main">Why Us</a></li>
           <li><a class="nav-link   scrollto" href="#contact">Contact Us</a></li>
+          <li><a class="getstarted scrollto" href="#exampleModal" data-bs-toggle="modal" data-bs-target="#modalLoginForm">Login</a></li>
           <!--<li><a class="getstarted scrollto" href="#pricing">Login</a></li>-->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -164,14 +165,14 @@
               {% csrf_token %}
               <div class="row gy-4">
                 <div class="col-lg-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                  <input type="text" name="fname" class="form-control" id="fname" placeholder="First Name" required>
                 </div>
                 <div class="col-lg-6 form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                  <input type="text" class="form-control" name="sname" id="sname" placeholder="Second Name" required>
                 </div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                <input type="phone" class="form-control" name="phone" id="phone" placeholder="Phone No" required>
               </div>
               <div class="form-group">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
@@ -296,8 +297,8 @@
               <div class="col-lg-3 col-md-6 footer-links">
                 <h4>Services</h4>
                 <ul>
-                  <li><i class="bx bx-chevron-right"></i> <a href="#">Selling of Cars</a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="#">Ordering Cars from abroad</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#" class="disabled">Selling of Cars</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="#" class="disabled">Ordering Cars from abroad</a></li>
                 </ul>
               </div>
     
@@ -318,15 +319,47 @@
     
         <div class="container footer-bottom clearfix">
           <div class="copyright">
-            &copy; Copyright <strong><span>WIBOTEC</span></strong>. All Rights Reserved
+            &copy; Copyright <strong><span>WIBO</span></strong>. All Rights Reserved
           </div>
           <div class="credits">
-            Designed by <a href="https://wibotec.github.io" target="_blank">WIBOTEC</a>
+            Designed by <a href="https://wibo.ac.tz" target="_blank">WIBO</a>
           </div>
         </div>
       <div id="preloader"></div>
       <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Modal -->
+    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <form action="{% url 'accounts:valid_member' %}" method="post">
+            {% csrf_token %}
+          <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">MAGARI</h4>
+            <button type="button" class="btn close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body mx-3">
+            <div class="md-form mb-5">
+              <label data-error="wrong" data-success="right">Your username</label>
+              <input type="text" name="username" class="form-control validate" required>
+            </div>
     
+            <div class="md-form mb-4">
+              <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+              <input type="password" name="password" class="form-control validate" required>
+            </div>
+    
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button type="submit" class="btn btn-outline-info rounded-5 px-5">Login</button>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+
       <!-- Vendor JS Files -->
       <script src="{% static 'cars/assets/vendor/aos/aos.js' %}"></script>
       <script src="{% static 'cars/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>

@@ -1,0 +1,68 @@
+{% extends 'staffpages/dashboard.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="mt-5 ms-1 me-1">
+ 
+    <form class="row g-3" method="POST" action="{% url 'staffpages:add_cars' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+    
+          <div class="col-md-6">
+            {{form.carName}}
+          </div>
+          <div class="col-md-6">
+            {{form.carPrice}}
+          </div>
+        
+          <div class="col-md-6">
+            {{form.carEngine}}
+          </div>
+
+          <div class="col-md-6">
+            {{form.doors}}
+          </div>
+        
+          <div class="col-md-6">
+            {{form.transmission}}
+          </div>
+
+          <div class="col-md-6">
+            {{form.color}}
+          </div>
+
+          <div class="">
+            {{form.fuel}}
+          </div>
+
+          <div class="col-md-6">
+            <label for="">First Image:</label>
+            {{form.carImg}}
+          </div>
+
+          <div class="col-md-6">
+            <label for="">Second Image:</label>
+            {{form.carSdImg}}
+          </div>
+
+          <div class="col-md-6">
+            <label for="">Third Image:</label>
+            {{form.carFrImg}}
+          </div>
+
+          <div class="col-md-6">
+            <label for="">Fourth Image:</label>
+            {{form.carInImg}}
+          </div>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-between">
+          <button class="btn btn-secondary" type="submit">Submit</button>
+          <a href="{% url 'staffpages:cars' %}" class="">
+            <button class="btn btn-secondary" type="button">Cars List</button>
+          </a>
+        </div>
+    </form>   
+  
+</div>
+
+{% endblock content %}

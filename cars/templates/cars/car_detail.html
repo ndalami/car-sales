@@ -4,11 +4,36 @@
 {% block content %}
 
 <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row car mb-3 mx-auto">
+    <div class="row cars mb-3 mx-auto">
             <div class="col-md align-items-center car">
-                <h3>{{singleCar.carName}}</h3>
-                <p class="fs-5">{{singleCar.carPrice}}<sup>Tzs</sup></p>
-                    <img class="w-75" src="{{singleCar.carImg.url}}" alt="">
+
+                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active ms-5" data-bs-interval="10000">
+                        <h3 class="ms-3">{{singleCar.carName}}</h3>
+                        <p class="fs-5 ms-4">{{singleCar.carPrice}}<sup>Tzs</sup></p>
+                        <img class="w-75 mx-auto" src="{{singleCar.carSdImg.url}}" alt="">
+                      </div>
+                      <div class="carousel-item ms-5" data-bs-interval="2000">
+                        <h3 class="ms-3">{{singleCar.carName}}</h3>
+                        <p class="fs-5 ms-4">{{singleCar.carPrice}}<sup>Tzs</sup></p>
+                        <img class="w-75 mx-auto" src="{{singleCar.carFrImg.url}}" alt="">
+                      </div>
+                      <div class="carousel-item ms-5 px-3">
+                        <h3 class="ms-3">{{singleCar.carName}}</h3>
+                        <p class="fs-5 ms-4">{{singleCar.carPrice}}<sup>Tzs</sup></p>
+                        <img class="w-75 mx-auto" src="{{singleCar.carInImg.url}}" alt="">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon bg-secondary" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                      <span class="carousel-control-next-icon bg-secondary" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
 
             <div class="col-md border rounded">

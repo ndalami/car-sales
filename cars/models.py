@@ -9,17 +9,20 @@ class Car (models.Model):
     transmission = models.CharField(max_length=15)
     color = models.CharField(max_length=20, blank=True)
     doors = models.IntegerField()
-    carImg = models.ImageField()
+    carImg = models.ImageField(upload_to='uploads/')
+    carSdImg = models.ImageField(upload_to='uploads/')
+    carFrImg = models.ImageField(upload_to='uploads/')
+    carInImg = models.ImageField(upload_to='uploads/')
 
     def __str__(self):
         return self.carName
 
 
 class Message(models.Model):
-    name = models.CharField(max_length = 250)
-    email= models.EmailField()
-    subject = models.CharField(max_length = 250)
+    fname = models.CharField(max_length = 250)
+    sname = models.CharField(max_length = 250)
+    phone= models.CharField(max_length = 12)
     message = models.TextField()
 
     def __str__(self):
-        return self.name
+        return self.fname + ' ' + self.sname

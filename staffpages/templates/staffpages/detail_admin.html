@@ -1,0 +1,77 @@
+{% extends 'staffpages/dashboard.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row car mb-3 mx-auto">
+      
+            <div class="col-md align-items-center car">
+
+                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active ms-5" data-bs-interval="10000">
+                        <h3 class="ms-3">{{adminCar.carName}}</h3>
+                        <p class="fs-5 ms-4">{{adminCar.carPrice}}<sup>Tzs</sup></p>
+                        <img class="w-75 mx-auto" src="{{adminCar.carSdImg.url}}" alt="">
+                      </div>
+                      <div class="carousel-item ms-5" data-bs-interval="2000">
+                        <h3 class="ms-3">{{adminCar.carName}}</h3>
+                        <p class="fs-5 ms-4">{{adminCar.carPrice}}<sup>Tzs</sup></p>
+                        <img class="w-75 mx-auto" src="{{adminCar.carFrImg.url}}" alt="">
+                      </div>
+                      <div class="carousel-item ms-5 px-3">
+                        <h3 class="ms-3">{{adminCar.carName}}</h3>
+                        <p class="fs-5 ms-4">{{adminCar.carPrice}}<sup>Tzs</sup></p>
+                        <img class="w-75 mx-auto" src="{{adminCar.carInImg.url}}" alt="">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon bg-secondary" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                      <span class="carousel-control-next-icon bg-secondary" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md border rounded">
+                <h2>Car Information</h2>
+                <li class="flex d-flex justify-content-between border-bottom">
+                    <p>Price</p>
+                    <p>{{adminCar.carPrice}}</p>
+                </li>
+                <li class="flex d-flex justify-content-between border-bottom">
+                    <p>Color</p>
+                    <p>{{adminCar.color}}</p>
+                </li>
+                <li class="flex d-flex justify-content-between border-bottom">
+                    <p>Price</p>
+                    <p>{{adminCar.carPrice}}</p>
+                </li>
+                <li class="flex d-flex justify-content-between border-bottom">
+                    <p>Price</p>
+                    <p>{{adminCar.carPrice}}</p>
+                </li>
+                <li class="flex d-flex justify-content-between border-bottom">
+                    <p>Engine(cc)</p>
+                    <p>{{adminCar.carEngine}}</p>
+                </li>
+                <li class="flex d-flex justify-content-between border-bottom">
+                    <p>Transmission</p>
+                    <p>{{adminCar.transmission}}</p>
+                </li>
+                <li class="flex d-flex justify-content-between border-bottom">
+                    <p>Fuel type</p>
+                    <p>{{adminCar.fuel}}</p>
+                </li>
+                <li class="flex d-flex justify-content-between">
+                    <p>Doors</p>
+                    <p>{{adminCar.doors}}</p>
+                </li>
+            </div>
+    </div>
+</div>
+{% endblock content %}

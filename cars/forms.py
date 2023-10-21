@@ -5,15 +5,16 @@ from .models import Message
 class MessageForm(ModelForm):
       class Meta:
             model = Message
-            fields =['name', 'email','subject', 'message']
+            fields =['fname', 'sname','phone', 'message']
+
 
             labels={
-                  'name':'','email':'', 'subject':'', 'message':''
+                  'fname':'','sname':'', 'phone':'', 'message':''
             }
 
             widgets ={
-                  'name':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your Name'}),
-                  'email':forms.EmailInput(attrs={'class':'form-control', 'placeholder':'Your Email'}),
-                  'subject':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Subject'}),
+                  'fname':forms.TextInput(attrs={'class':'form-control', 'placeholder':'First Name'}),
+                  'sname':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Second Name'}),
+                  'phone':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Phone Number'}),
                   'message':forms.Textarea(attrs={'class':'form-control', 'placeholder':'Your Message'})  
             }

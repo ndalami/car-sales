@@ -9,9 +9,12 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-body {
+html,body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  max-width: 100%;
+  overflow-x: hidden;
+  
 }
 
 a {
@@ -2089,10 +2092,19 @@ section {
 
 
 .car{
+  margin-top: 20px;
+  margin-left: 0px;
+}
+
+.cars{
   margin-top: 100px;
   margin-left: 0px;
 }
 
 mar{
   margin-top: 60%;
+}
+
+.pan{
+  margin-left: 70%;
 }
