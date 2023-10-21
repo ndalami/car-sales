@@ -81,6 +81,6 @@ def search(request):
     
 
 def detail_admin(request,car_id):
-    adminCar = Car.objects.get(pk=car_id)
-    context ={'adminCar':adminCar}
+    car = Car.objects.get(pk=car_id)
+    context ={'car':car}
     return render(request,'staffpages/detail_admin.html',context)

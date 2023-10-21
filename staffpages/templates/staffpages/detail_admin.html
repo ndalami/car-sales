@@ -11,19 +11,19 @@
                 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active ms-5" data-bs-interval="10000">
-                        <h3 class="ms-3">{{adminCar.carName}}</h3>
-                        <p class="fs-5 ms-4">{{adminCar.carPrice}}<sup>Tzs</sup></p>
-                        <img class="w-75 mx-auto" src="{{adminCar.carSdImg.url}}" alt="">
+                        <h3 class="ms-3">{{car.carName}}</h3>
+                        <p class="fs-5 ms-4">{{car.carPrice}}<sup>Tzs</sup></p>
+                        <img class="w-75 mx-auto" src="{{car.carSdImg.url}}" alt="">
                       </div>
                       <div class="carousel-item ms-5" data-bs-interval="2000">
-                        <h3 class="ms-3">{{adminCar.carName}}</h3>
-                        <p class="fs-5 ms-4">{{adminCar.carPrice}}<sup>Tzs</sup></p>
-                        <img class="w-75 mx-auto" src="{{adminCar.carFrImg.url}}" alt="">
+                        <h3 class="ms-3">{{car.carName}}</h3>
+                        <p class="fs-5 ms-4">{{car.carPrice}}<sup>Tzs</sup></p>
+                        <img class="w-75 mx-auto" src="{{car.carFrImg.url}}" alt="">
                       </div>
                       <div class="carousel-item ms-5 px-3">
-                        <h3 class="ms-3">{{adminCar.carName}}</h3>
-                        <p class="fs-5 ms-4">{{adminCar.carPrice}}<sup>Tzs</sup></p>
-                        <img class="w-75 mx-auto" src="{{adminCar.carInImg.url}}" alt="">
+                        <h3 class="ms-3">{{car.carName}}</h3>
+                        <p class="fs-5 ms-4">{{car.carPrice}}<sup>Tzs</sup></p>
+                        <img class="w-75 mx-auto" src="{{car.carInImg.url}}" alt="">
                       </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -41,43 +41,43 @@
                 <h2>Car Information</h2>
                 <li class="flex d-flex justify-content-between border-bottom">
                     <p>Price</p>
-                    <p>{{adminCar.carPrice}}</p>
+                    <p>{{car.carPrice}}</p>
                 </li>
                 <li class="flex d-flex justify-content-between border-bottom">
                     <p>Color</p>
-                    <p>{{adminCar.color}}</p>
+                    <p>{{car.color}}</p>
                 </li>
                 <li class="flex d-flex justify-content-between border-bottom">
                     <p>Price</p>
-                    <p>{{adminCar.carPrice}}</p>
+                    <p>{{car.carPrice}}</p>
                 </li>
                 <li class="flex d-flex justify-content-between border-bottom">
                     <p>Price</p>
-                    <p>{{adminCar.carPrice}}</p>
+                    <p>{{car.carPrice}}</p>
                 </li>
                 <li class="flex d-flex justify-content-between border-bottom">
                     <p>Engine(cc)</p>
-                    <p>{{adminCar.carEngine}}</p>
+                    <p>{{car.carEngine}}</p>
                 </li>
                 <li class="flex d-flex justify-content-between border-bottom">
                     <p>Transmission</p>
-                    <p>{{adminCar.transmission}}</p>
+                    <p>{{car.transmission}}</p>
                 </li>
                 <li class="flex d-flex justify-content-between border-bottom">
                     <p>Fuel type</p>
-                    <p>{{adminCar.fuel}}</p>
+                    <p>{{car.fuel}}</p>
                 </li>
                 <li class="flex d-flex justify-content-between">
                     <p>Doors</p>
-                    <p>{{adminCar.doors}}</p>
+                    <p>{{car.doors}}</p>
                 </li>
             </div>
     </div>
     <div class="">
-      <a href="{% url 'staffpages:add_cars' %}">
+      <a href="{% url 'staffpages:update' car.id %}">
           <button type="button" class="btn btn-outline-secondary"><i class="bi bi-pencil-square"></i> Update</button>
       </a>
-      <a href="{% url 'staffpages:add_cars' %}">
+      <a href="{% url 'staffpages:delete_car' car.id %}">
         <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash"></i> Delete</button>
       </a>
       <a href="{% url 'staffpages:cars' %}">
