@@ -11,7 +11,7 @@
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
           <h2 class="text-white">Get Your Dream Car from Us</h2>
-          <p class="text-white">We are company specialized in selling various car brands
+          <p class="text-white">We are company specialized in selling and ordering various car brands
              both new and used from abroad at an affordable price</p>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <a href="#pricing" class="btn-get-started scrollto">Get Started</a>
@@ -43,7 +43,7 @@
             <h3>{{car.carName}}</h3>
             <p class="fs-5">{{car.carPrice}}<sup>Tzs</sup></p>
             <div class="flex d-block">
-              <img class="w-75" src="{{car.carImg.url}}" alt="">
+              <img class="w-100" src="{{car.carImg.url}}" alt="">
             </div>
             <a href="{% url 'cars:car_detail' car.id %}" class="float-end pb-2">Details <i class="bi bi-arrow-right"></i></a>
           </div>

@@ -34,7 +34,7 @@ def update_cars(request,car_id):
        
     else:
         form = CarForm(instance=car)
-    context = {'form':form,'instance':car}
+    context = {'form':form,'car':car}
     return render(request, 'staffpages/update_cars.html',context)
 
 # view to delete a particular Car
@@ -51,8 +51,8 @@ def home(request):
 
 # View to render messages from customers
 def messages(request):
-    message = Message.objects.all()
-    paginator = Paginator(message, 3) 
+    message = Message.objects.all().order_by('-id')
+    paginator = Paginator(message, 10) 
     page = request.GET.get('page')
     message = paginator.get_page(page)
     context = {'message':message}

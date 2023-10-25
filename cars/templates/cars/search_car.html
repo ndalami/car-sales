@@ -20,7 +20,7 @@
                     <div class="box">
                       <h3>{{cars.carName}}</h3>
                       <p class="fs-5">{{cars.carPrice}}<sup>Tzs</sup></p>
-                      <img src="{{cars.carImg.url}}" alt="">
+                      <img class="w-100" src="{{cars.carImg.url}}" alt="">
                       <a href="{% url 'cars:car_detail' cars.id %}" class="float-end pb-2">Details <i class="bi bi-arrow-right"></i></a>
                     </div>
                   </div>

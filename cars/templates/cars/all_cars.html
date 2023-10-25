@@ -29,7 +29,7 @@
             <h3>{{car.carName}}</h3>
             <p class="fs-5">{{car.carPrice}}<sup>Tzs</sup></p>
             <div class="flex d-flex">
-              <img class="w-75" src="{{car.carImg.url}}" alt="">
+              <img class="w-100" src="{{car.carImg.url}}" alt="">
             </div>
             <a href="{% url 'cars:car_detail' car.id %}" class="float-end pb-2">Details <i class="bi bi-arrow-right"></i></a>
           </div>
